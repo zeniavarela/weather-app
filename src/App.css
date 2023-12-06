@@ -27,20 +27,25 @@
   align-items: center;
 }
 .city {
-  font-size: 30px;
-  font-weight: 200;
+  font-size: 50px;
+  font-weight: 500;
+  border: 5px solid rgb(187, 36, 187);
+  border-style: double;
+  border-radius: 12px;
 
 }
 
 .temp {
   font-size: 90px;
-  padding: 10px;
-  border: 1px solid lightgray;
+  /* padding: 10px; */
+  border: lightgray;
+  border-style: double;
   border-radius: 12px;
 
 }
 
 .weather {
-  font-size: 30px;
+  font-size: 50px;
   font-weight: 200;
+
 }
