@@ -35,8 +35,13 @@ const App = () => {
         <div className="weather-data">
           <p className="city">{weatherData.name}</p>
           <p className="temp">{Math.round(weatherData.main.temp)}°F</p>
-          <p>Feels like {weatherData.main.feels_like}°F</p>
-          <p className="weather">{weatherData.weather[0].main}</p>
+          <p className="feels-like">
+            Feels like {weatherData.main.feels_like}°F
+          </p>
+          <div className="high-low">
+            <p>High: {Math.round(weatherData.main.temp_max)}°F</p>
+            <p>Low: {Math.round(weatherData.main.temp_max)}°F</p>
+          </div>
         </div>
       )}
     </div>
