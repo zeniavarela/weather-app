@@ -2,19 +2,22 @@ import React, { useState } from "react"
 import "./App.css"
 
 const App = () => {
-  const apiKey = "f281294ad11a241c301ce2e3afabaf6f"
   const [weatherData, setWeatherData] = useState([{}])
   const [city, setCity] = useState("")
+  const apiKey = process.env.REACT_APP_API_KEY
 
   const getWeather = (event) => {
-    if (event.key == "Enter")
-      fetch(
-        `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${apiKey}`
-      )
+    if (event.key === "Enter") {
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&APPID=${apiKey}`
+      console.log("API URL:", apiUrl)
+
+      fetch(apiUrl)
         .then((response) => response.json())
         .then((data) => {
+          console.log("API Response:", data)
           setWeatherData(data)
         })
+    }
   }
 
   return (
